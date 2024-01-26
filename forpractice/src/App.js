@@ -9,6 +9,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <p>Welcome to this world</p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -16,6 +17,7 @@ function App() {
           rel="noopener noreferrer"
         >
           I am Second Branch
+          This branch is merged into main
         </a>
       </header>
     </div>
