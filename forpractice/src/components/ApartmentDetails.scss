@@ -1,0 +1,43 @@
+.apartment-details {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+  
+    h2, h3 {
+      margin-bottom: 15px;
+    }
+  
+    p, ul {
+      margin-bottom: 10px;
+    }
+  
+    .apartment-details__room {
+      margin-bottom: 20px;
+    }
+
+    &__room {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 4px;
+        border-radius: 8px;
+      }
+    
+      &__room-large {
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        min-height: 200px;  // Make the div larger
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    
+      &__room h4 {
+        margin-top: 0;
+      }
+  }
+  
