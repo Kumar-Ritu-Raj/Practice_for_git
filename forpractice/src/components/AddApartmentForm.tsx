@@ -3,7 +3,6 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import "./AddApartmentForm.scss";
 
-// Define types for the apartment form
 interface Room {
   roomName: string;
   beds: number;
@@ -58,7 +57,6 @@ const AddApartmentForm: React.FC = () => {
 
   const { register, handleSubmit, reset } = useForm<Apartment>();
 
-  // Handle adding a new room to a specific floor
   const handleAddRoom = (floorIndex: number) => {
     const newFloors = [...floors];
     newFloors[floorIndex].rooms.push({
@@ -75,7 +73,6 @@ const AddApartmentForm: React.FC = () => {
     setFloors(newFloors);
   };
 
-  // Handle form submission
   const onSubmit: SubmitHandler<Apartment> = (data) => {
     const apartmentData: Apartment = {
       ...data,
@@ -109,11 +106,9 @@ const AddApartmentForm: React.FC = () => {
     ]);
   };
 
-  // Handle the change of number of floors
   const handleFloorChange = (newFloorsCount: number) => {
     const newFloors = [...floors];
     if (newFloorsCount > numFloors) {
-      // Add new floors
       for (let i = numFloors; i < newFloorsCount; i++) {
         newFloors.push({
           rooms: [
@@ -137,7 +132,6 @@ const AddApartmentForm: React.FC = () => {
         });
       }
     } else {
-      // Remove extra floors
       newFloors.splice(newFloorsCount);
     }
     setNumFloors(newFloorsCount);
@@ -151,7 +145,6 @@ const AddApartmentForm: React.FC = () => {
         className="add-apartment-form__form"
         onSubmit={handleSubmit(onSubmit)}
       >
-        {/* Apartment Name */}
         <div className="add-apartment-form__field">
           <label htmlFor="apartmentName" className="add-apartment-form__label">
             Apartment Name:
@@ -164,7 +157,6 @@ const AddApartmentForm: React.FC = () => {
           />
         </div>
 
-        {/* Location */}
         <div className="add-apartment-form__field">
           <label htmlFor="location" className="add-apartment-form__label">
             Location:
@@ -177,7 +169,6 @@ const AddApartmentForm: React.FC = () => {
           />
         </div>
 
-        {/* Number of Floors */}
         <div className="add-apartment-form__field">
           <label htmlFor="numFloors" className="add-apartment-form__label">
             Number of Floors:
@@ -192,7 +183,6 @@ const AddApartmentForm: React.FC = () => {
           />
         </div>
 
-        {/* Floors and Rooms */}
         {floors.map((floor, floorIndex) => (
           <div key={floorIndex} className="add-apartment-form__floor">
             <h3 className="add-apartment-form__section-title">
@@ -408,7 +398,6 @@ const AddApartmentForm: React.FC = () => {
           </div>
         ))}
 
-        {/* Facilities */}
         <div className="add-apartment-form__facilities">
           <h3 className="add-apartment-form__section-title">Facilities</h3>
           <div className="add-apartment-form__field">
@@ -465,7 +454,6 @@ const AddApartmentForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Submit Button */}
         <button type="submit" className="add-apartment-form__button">
           Submit
         </button>

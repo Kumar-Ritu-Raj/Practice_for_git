@@ -6,7 +6,7 @@ interface CarouselProps {
   interval?: number;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ images, interval = 5000 }) => { // Default to 5000ms (5 seconds)
+const Carousel: React.FC<CarouselProps> = ({ images, interval = 5000 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   let slideInterval: NodeJS.Timeout | null = null;
 
@@ -28,22 +28,10 @@ const Carousel: React.FC<CarouselProps> = ({ images, interval = 5000 }) => { // 
     setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
-  // const handleMouseEnter = () => {
-  //   if (slideInterval) clearInterval(slideInterval);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   slideInterval = setInterval(() => {
-  //     handleNext();
-  //   }, interval);
-  // };
 
   return (
     <div
       className="carousel"
-      // onMouseEnter={handleMouseEnter}
-      // onMouseLeave={handleMouseLeave}
-      // tabIndex={0}
     >
       <div
         className="carousel__slides"
